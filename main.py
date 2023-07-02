@@ -7,6 +7,11 @@ class Car:
         self.horse_power = None
         self.color = None
 
+class Driver:
+    def __init__(self, name, age, car):
+        self.name = name
+        self.age = age
+        self.car = car
 
 car1 = Car()
 car1.brand = "BMW"
@@ -22,10 +27,17 @@ car3 = Car()
 # assign values to the attributes of car3 in one line
 car3.brand, car3.horse_power, car3.color = "Audi", 300, "White"
 
+# loop over a list of cars and print their attributes
+cars = [car1, car2, car3]
+for car in cars:
+    print(str(car), ":",  f"Car: brand {car.brand}, horse power {car.horse_power}, color {car.color}")
 
-print(f"Car 1: brand {car1.brand}, horse power {car1.horse_power}, color {car1.color}")
-print(f"Car 2: brand {car2.brand}, horse power {car2.horse_power}, color {car2.color}")
-print(f"Car 3: brand {car3.brand}, horse power {car3.horse_power}, color {car3.color}")
+# create a driver and assign a car to him
+driver1 = Driver("John", 30, car1)
+print(f"Driver: name {driver1.name} age {driver1.age}, drives {driver1.car.brand} with horse power {driver1.car.horse_power} and color {driver1.car.color}")
+
+
+
 
 
 
